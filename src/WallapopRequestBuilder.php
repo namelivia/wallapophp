@@ -1,4 +1,7 @@
 <?php
+
+namespace Namelivia\Wallapophp;
+
 class WallapopRequestBuilder {
 
 	const BASE_URL = 'http://pro2.wallapop.com/shnm-portlet/api/v1';
@@ -56,7 +59,7 @@ class WallapopRequestBuilder {
 		return $this->buildRequest('GET', 'item.json/search8', $params);
 	}
 
-	private function buildItemsRequest($itemsState, $userId, $start, $end) 
+	public function buildItemsRequest($itemsState, $userId, $start, $end) 
 	{
 		$endpoint = 'item.json/user2/' . $userId;
 		$params = [
