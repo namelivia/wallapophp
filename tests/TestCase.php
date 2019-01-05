@@ -8,16 +8,16 @@ use Mockery;
 
 abstract class TestCase extends BaseTestCase
 {
-	protected $app;
+    protected $app;
 
-	public function setUp()
-	{
-		parent::setUp();
-		$this->app = new Container();
-	}
+    public function setUp()
+    {
+        parent::setUp();
+        $this->app = new Container();
+    }
 
-	public function tearDown()
-	{
-		Mockery::close();
-	}
+    public function tearDown()
+    {
+        Mockery::close();
+    }
 }
