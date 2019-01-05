@@ -11,30 +11,30 @@ class WallapopClient {
 		$this->requestBuilder = $requestBuilder;
 	}
 
-	public function user(int $userId)
+	public function user(string $userId)
 	{
 		$endpoint = 'user.json/' . $userId;
 		return $this->requestBuilder->buildRequest('GET', $endpoint, []);
 	}
 
-	public function userReviewsReceived(int $userId)
+	public function userReviewsReceived(string $userId)
 	{
 		$endpoint = 'review.json/user/' . $userId . '/received';
 		return $this->requestBuilder->buildRequest('GET', $endpoint, []);
 	}
 
-	public function userReviewsSent(int $userId)
+	public function userReviewsSent(string $userId)
 	{
 		$endpoint = 'review.json/user/' . $userId . '/send';
 		return $this->requestBuilder->buildRequest('GET', $endpoint, []);
 	}
 
-	public function userItemsPublished(int $userId, int $start = 0, int $end = 250) 
+	public function userItemsPublished(string $userId, int $start = 0, int $end = 250) 
 	{
 		return $this->requestBuilder->buildItemsRequest('PUBLISHED', $userId, $start, $end);
 	}
 
-	public function userItemsSold(int $userId, int $start = 0, int $end = 250) 
+	public function userItemsSold(string $userId, int $start = 0, int $end = 250) 
 	{
 		return $this->requestBuilder->buildItemsRequest('SOLD_OUTSIDE', $userId, $start, $end);
 	}

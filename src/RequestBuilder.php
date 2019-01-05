@@ -2,9 +2,18 @@
 
 namespace Namelivia\Wallapophp;
 
+use GuzzleHttp\Client;
+
 class RequestBuilder {
 
 	const BASE_URL = 'http://pro2.wallapop.com/shnm-portlet/api/v1/';
+
+	private $client;
+
+	public function __construct(Client $client)
+	{
+		$this->client = $client;
+	}
 
 	public function buildItemsRequest($itemsState, $userId, $start, $end) 
 	{
@@ -20,9 +29,6 @@ class RequestBuilder {
 	public function buildRequest($method, $endpoint, $params)
 	{
 			$url = self::BASE_URL . $endpoint . '?' . http_build_query($params);
-				return [
-					'method' => $method,
-					'url' => $url
-				];
+				return $this->client->request($method, $url)->getBody();
 	}
 }

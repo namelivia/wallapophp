@@ -6,6 +6,7 @@
     "type": "library",
     "require": {
         "php": "^7.0",
+        "guzzlehttp/guzzle": "^6.3",
         "php-di/php-di": "^6.0"
     },
     "require-dev": {
