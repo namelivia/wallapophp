@@ -9,11 +9,8 @@ parameters:
             triggered_by: [php]
             metadata: 
                 priority: 2
-        phpcs: 
-            triggered_by: [php]
-            metadata: 
-                priority: 1
         phpmd:
+            ruleset: ['custom-ruleset']
             triggered_by: [php]
             metadata: 
                 priority: 0

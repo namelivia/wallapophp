@@ -23,7 +23,7 @@ class WallapopRequestBuilderTest extends TestCase
         $userId = 1;
         $this->requestBuilder->shouldReceive('buildRequest')
             ->once()
-            ->with('GET', 'user.json/' . $userId, [])
+            ->with('GET', 'user.json/'.$userId, [])
             ->andReturn('result');
         $this->assertEquals(
             'result',
@@ -36,7 +36,7 @@ class WallapopRequestBuilderTest extends TestCase
         $userId = 1;
         $this->requestBuilder->shouldReceive('buildRequest')
             ->once()
-            ->with('GET', 'review.json/user/' . $userId . '/received', [])
+            ->with('GET', 'review.json/user/'.$userId.'/received', [])
             ->andReturn('result');
         $this->assertEquals(
             'result',
@@ -49,7 +49,7 @@ class WallapopRequestBuilderTest extends TestCase
         $userId = 1;
         $this->requestBuilder->shouldReceive('buildRequest')
             ->once()
-            ->with('GET', 'review.json/user/' . $userId . '/send', [])
+            ->with('GET', 'review.json/user/'.$userId.'/send', [])
             ->andReturn('result');
         $this->assertEquals(
             'result',
@@ -106,7 +106,7 @@ class WallapopRequestBuilderTest extends TestCase
                 'orderType' => $orderType,
                 'timeFilter' => $timeFilter,
                 'keywords' => $query,
-                'categoryIds' => $categoryIds
+                'categoryIds' => $categoryIds,
                 ]
             )
             ->andReturn('result');

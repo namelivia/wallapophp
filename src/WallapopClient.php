@@ -4,7 +4,6 @@ namespace Namelivia\Wallapophp;
 
 class WallapopClient
 {
-
     private $requestBuilder;
 
     public function __construct(RequestBuilder $requestBuilder)
@@ -14,34 +13,37 @@ class WallapopClient
 
     public function user(string $userId)
     {
-        $endpoint = 'user.json/' . $userId;
+        $endpoint = 'user.json/'.$userId;
+
         return $this->requestBuilder->buildRequest('GET', $endpoint, []);
     }
 
     public function userReviewsReceived(string $userId)
     {
-        $endpoint = 'review.json/user/' . $userId . '/received';
+        $endpoint = 'review.json/user/'.$userId.'/received';
+
         return $this->requestBuilder->buildRequest('GET', $endpoint, []);
     }
 
     public function userReviewsSent(string $userId)
     {
-        $endpoint = 'review.json/user/' . $userId . '/send';
+        $endpoint = 'review.json/user/'.$userId.'/send';
+
         return $this->requestBuilder->buildRequest('GET', $endpoint, []);
     }
 
-    public function userItemsPublished(string $userId, int $start = 0, int $end = 250) 
+    public function userItemsPublished(string $userId, int $start = 0, int $end = 250)
     {
         return $this->requestBuilder->buildItemsRequest('PUBLISHED', $userId, $start, $end);
     }
 
-    public function userItemsSold(string $userId, int $start = 0, int $end = 250) 
+    public function userItemsSold(string $userId, int $start = 0, int $end = 250)
     {
         return $this->requestBuilder->buildItemsRequest('SOLD_OUTSIDE', $userId, $start, $end);
     }
 
     public function search(//TODO: research the type hintings here
-        $latitude, 
+        $latitude,
         $longitude,
         $query = null,
         $categoryIds = null,
@@ -54,7 +56,7 @@ class WallapopClient
         'longitude' => $longitude,
         'orderBy' => $orderBy,
         'orderType' => $orderType,
-        'timeFilter' => $timeFilter
+        'timeFilter' => $timeFilter,
         ];
         if (!is_null($query)) {
             $params['keywords'] = $query;
@@ -62,6 +64,7 @@ class WallapopClient
         if (!is_null($categoryIds)) {
             $params['categoryIds'] = $categoryIds;
         }
+
         return $this->requestBuilder->buildRequest('GET', 'item.json/search8', $params);
     }
 }
