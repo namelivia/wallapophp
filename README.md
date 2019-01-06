@@ -15,7 +15,7 @@ More endpoints to come.
 
 ## Requirements
 
-[PHP >= 7.0](https://php.net) and [composer](https://getcomposer.org)
+[PHP >= 7.1](https://php.net) and [composer](https://getcomposer.org)
 
 ## Installation
 For installing the library you must require it as a VCS repository at the moment. So

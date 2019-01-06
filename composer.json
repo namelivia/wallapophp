@@ -2,10 +2,10 @@
     "name": "namelivia/wallapoph",
     "description": "A PHP client for wallapop",
     "keywords": ["wallapop"],
-    "license": "GLP3",
+    "license": "GLP-3.0",
     "type": "library",
     "require": {
-        "php": "^7.0",
+        "php": "^7.1",
         "guzzlehttp/guzzle": "^6.3",
         "php-di/php-di": "^6.0"
     },
